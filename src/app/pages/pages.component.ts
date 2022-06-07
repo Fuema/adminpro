@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
+
+// assest/js/custom.js Para el init after login
+declare function customInitFunctions();
 
 @Component({
   selector: 'app-pages',
@@ -7,9 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private settingServices: SettingsService ){
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    customInitFunctions();
   }
 
 }
